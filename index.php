@@ -8,7 +8,7 @@ class Model_Studing
     public static function studing()
     {
         try {
-            $stmt = Db::_conexao()->query("select * from tbcliente")->fetchAll(PDO::FETCH_ASSOC);
+            $stmt = Db::_conexao()->query("select * from tbestudante")->fetchAll(PDO::FETCH_ASSOC);
         } catch (Exception $e) {
             echo $e->getMessage();
         }
@@ -17,7 +17,7 @@ class Model_Studing
 
 }
 
-$clientes = Model_Studing::studing();
-foreach ($clientes as $cliente) {
-    echo $cliente['nome_cliente'];
+$estudantes = Model_Studing::studing();
+foreach ($estudantes as $estudante) {
+    echo $estudante['nome'];
 }
