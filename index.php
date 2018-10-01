@@ -2,10 +2,10 @@
 
 require_once("./conexao.php");
 
-class Model_Studing
+class Model_Student
 {
 
-    public static function studing()
+    public static function catchStudents()
     {
         try {
             $stmt = Db::_conexao()->query("select * from tbestudante")->fetchAll(PDO::FETCH_ASSOC);
@@ -17,7 +17,7 @@ class Model_Studing
 
 }
 
-$estudantes = Model_Studing::studing();
+$estudantes = Model_Student::catchStudents();
 foreach ($estudantes as $estudante) {
     echo $estudante['nome'];
 }
