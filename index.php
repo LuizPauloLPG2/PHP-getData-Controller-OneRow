@@ -7,12 +7,7 @@ class Model_Student
 
     public static function catchStudents()
     {
-        try {
-            $stmt = Db::_conexao()->query("select * from tbestudante")->fetchAll(PDO::FETCH_ASSOC);
-        } catch (Exception $e) {
-            echo $e->getMessage();
-        }
-        return $stmt;
+      return $stmt = Db::_conexao()->query("select * from tbestudante")->fetchAll(PDO::FETCH_ASSOC);
     }
 
 }
