@@ -2,17 +2,18 @@
 
 require "./conexao.php";
 
-class Model_Student
+class User
 {
 
-    public static function catchStudents()
+    public static function all()
     {
-      return $stmt = Db::_conexao()->query("select * from tbestudante")->fetchAll(PDO::FETCH_ASSOC);
+        return Db::init()->query("SELECT * FROM users")->fetchAll(PDO::FETCH_ASSOC);
     }
 
 }
 
-$estudantes = Model_Student::catchStudents();
-foreach ($estudantes as $estudante) {
-    echo $estudante['nome'];
+$users = User::all();
+
+foreach ($users as $user) {
+    echo $user['name'];
 }
