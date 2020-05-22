@@ -3,14 +3,13 @@
 class Db
 {
 
-    public static function _conexao()
+    public static function init()
     {
         try {
-            $conexao = new PDO("mysql:host=localhost;dbname=database;", "root", "");
+            return new PDO("mysql:host=localhost;dbname=database;", "root", "");
         } catch (Exception $e) {
-            echo $e->getMessage();
+            die($e->getMessage());
         }
-        return $conexao;
     }
 
 }
