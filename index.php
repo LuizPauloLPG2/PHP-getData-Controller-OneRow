@@ -1,6 +1,6 @@
 <?php
 
-require_once("./conexao.php");
+require "./conexao.php";
 
 class Model_Student
 {
